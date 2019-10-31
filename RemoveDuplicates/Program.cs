@@ -22,7 +22,20 @@ namespace RemoveDuplicates
         
         public List<int> GetAnswer(List<int> inputList)
         {
-            return inputList;
+            var outputList = new List<int>(){};
+            if( inputList.Count == 0)
+            {
+                return inputList;
+            }
+
+            foreach(var l in inputList)
+            {
+                if( !outputList.Contains(l))
+                {
+                    outputList.Add(l);
+                }
+            }
+            return outputList;
         }
     }
 }
