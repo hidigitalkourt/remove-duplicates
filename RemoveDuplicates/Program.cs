@@ -22,7 +22,7 @@ namespace RemoveDuplicates
         
         public List<int> GetAnswer(List<int> inputList)
         {
-            return new List<int>(){};
+            return inputList;
         }
     }
 }
