@@ -29,5 +29,16 @@ namespace RemoveDuplicatesTests
 
             actual.Should().BeEquivalentTo(expected);
         }
+
+        [Fact]
+        public void ReturnListForNonDistinctValues()
+        {
+            var inputList = new List<int>(){1,1,2,2,3,3};
+            var expected = new List<int>(){1,2,3};
+            var answer = new Answer(inputList);
+            var actual = answer.Elements;
+
+            actual.Should().BeEquivalentTo(expected);
+        }
     }
 }
