@@ -11,11 +11,12 @@ namespace RemoveDuplicatesTests
         [Fact]
         public void Test1()
         {
-            var inputList = new List<int>();
-            var expected = new List<int>();
-            var actual = new Answer(inputList);
+            var inputList = new List<int>(){};
+            var expected = new List<int>(){};
+            var answer = new Answer(inputList);
+            var actual = answer.Elements;
 
-            actual.Should().Be(expected);
+            actual.Should().BeEquivalentTo(expected);
         }
     }
 }
