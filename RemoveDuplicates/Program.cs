@@ -12,15 +12,15 @@ namespace RemoveDuplicates
         }
         public static class Answer<T>
         {
-            public static List<T> Deduplicate(List<T> inputList)
+            public static List<T> Deduplicate(List<T> inputValues)
             {
                 var outputList = new List<T>() { };
-                if (inputList.Count == 0)
+                if (inputValues.Count == 0)
                 {
-                    return inputList;
+                    return inputValues;
                 }
 
-                foreach (var l in inputList)
+                foreach (var l in inputValues)
                 {
                     if (!outputList.Contains(l))
                     {
