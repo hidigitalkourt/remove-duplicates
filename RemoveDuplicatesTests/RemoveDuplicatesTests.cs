@@ -11,9 +11,9 @@ namespace RemoveDuplicatesTests
         [Fact]
         public void ReturnEmptyIfEmpty()
         {
-            var inputList = new List<int>(){};
+            var inputValues = new List<int>(){};
             var expected = new List<int>(){};
-            var actual = Answer.Deduplicate(inputList);
+            var actual = Answer.Deduplicate(inputValues);
            
             actual.Should().BeEquivalentTo(expected);
         }
@@ -21,9 +21,9 @@ namespace RemoveDuplicatesTests
         [Fact]
         public void ReturnListForDistinctValues()
         {
-            var inputList = new List<int>(){1,2};
+            var inputValues = new List<int>(){1,2};
             var expected = new List<int>(){1,2};
-            var actual = Answer.Deduplicate(inputList);
+            var actual = Answer.Deduplicate(inputValues);
            
             actual.Should().BeEquivalentTo(expected);
         }
@@ -31,9 +31,9 @@ namespace RemoveDuplicatesTests
         [Fact]
         public void ReturnListForNonDistinctValues()
         {
-            var inputList = new List<int>(){1,1,2,2,3,3};
+            var inputValues = new List<int>(){1,1,2,2,3,3};
             var expected = new List<int>(){1,2,3};
-            var actual = Answer.Deduplicate(inputList);
+            var actual = Answer.Deduplicate(inputValues);
            
             actual.Should().BeEquivalentTo(expected);
         }
@@ -41,9 +41,9 @@ namespace RemoveDuplicatesTests
         [Fact]
         public void ReturnListForNonDistinctValuesNonOrdered()
         {
-            var inputList = new List<int>(){1,2,3,1,2,3};
+            var inputValues = new List<int>(){1,2,3,1,2,3};
             var expected = new List<int>(){1,2,3};
-            var actual = Answer.Deduplicate(inputList);
+            var actual = Answer.Deduplicate(inputValues);
            
             actual.Should().BeEquivalentTo(expected);
         }
