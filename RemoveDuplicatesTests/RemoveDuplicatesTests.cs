@@ -49,6 +49,46 @@ namespace RemoveDuplicatesTests
             actual.Should().BeEquivalentTo(expected);
         }
 
+        [Fact]
+        public void ReturnEmptyIfEmptyListStrings()
+        {
+            var inputValues = new List<string>(){};
+            var expected = new List<string>(){};
+            var actual = Answer<string>.Deduplicate(inputValues);
+           
+            actual.Should().BeEquivalentTo(expected);
+        }
+
+        [Fact]
+        public void ReturnListForDistinctStrings()
+        {
+            var inputValues = new List<string>(){"way","out"};
+            var expected = new List<string>(){"way","out"};
+            var actual = Answer<string>.Deduplicate(inputValues);
+           
+            actual.Should().BeEquivalentTo(expected);
+        }
+
+        [Fact]
+        public void ReturnListForNonDistinctStrings()
+        {
+            var inputValues = new List<string>(){"way","way","out","out","yonder","yonder"};
+            var expected = new List<string>(){"way","out","yonder"};
+            var actual = Answer<string>.Deduplicate(inputValues);
+           
+            actual.Should().BeEquivalentTo(expected);
+        }
+
+        [Fact]
+        public void ReturnListForNonDistinctStringsNonOrdered()
+        {
+            var inputValues = new List<string>(){"way","out","yonder","way","out","yonder"};
+            var expected = new List<string>(){"way","out","yonder"};
+            var actual = Answer<string>.Deduplicate(inputValues);
+           
+            actual.Should().BeEquivalentTo(expected);
+        }
+
         
     }
 }
