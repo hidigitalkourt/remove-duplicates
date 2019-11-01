@@ -13,9 +13,8 @@ namespace RemoveDuplicatesTests
         {
             var inputList = new List<int>(){};
             var expected = new List<int>(){};
-            var answer = new Answer(inputList);
-            var actual = answer.Elements;
-
+            var actual = Answer.Deduplicate(inputList);
+           
             actual.Should().BeEquivalentTo(expected);
         }
 
@@ -24,9 +23,8 @@ namespace RemoveDuplicatesTests
         {
             var inputList = new List<int>(){1,2};
             var expected = new List<int>(){1,2};
-            var answer = new Answer(inputList);
-            var actual = answer.Elements;
-
+            var actual = Answer.Deduplicate(inputList);
+           
             actual.Should().BeEquivalentTo(expected);
         }
 
@@ -35,9 +33,18 @@ namespace RemoveDuplicatesTests
         {
             var inputList = new List<int>(){1,1,2,2,3,3};
             var expected = new List<int>(){1,2,3};
-            var answer = new Answer(inputList);
-            var actual = answer.Elements;
+            var actual = Answer.Deduplicate(inputList);
+           
+            actual.Should().BeEquivalentTo(expected);
+        }
 
+        [Fact]
+        public void ReturnListForNonDistinctValuesNonOrdered()
+        {
+            var inputList = new List<int>(){1,2,3,1,2,3};
+            var expected = new List<int>(){1,2,3};
+            var actual = Answer.Deduplicate(inputList);
+           
             actual.Should().BeEquivalentTo(expected);
         }
     }

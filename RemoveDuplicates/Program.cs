@@ -4,23 +4,13 @@ using System.Collections.Generic;
 
 namespace RemoveDuplicates
 {
-      class Program
+    public static class Answer
     {
         static void Main(string[] args)
         {
 
         }
-
-    }
-    public class Answer
-    {
-        public List<int> Elements;
-        public Answer(List<int> inputList)
-        {
-            this.Elements = GetAnswer(inputList);
-        }
-        
-        public List<int> GetAnswer(List<int> inputList)
+        public static List<int> Deduplicate(List<int> inputList)
         {
             var outputList = new List<int>(){};
             if( inputList.Count == 0)
@@ -37,5 +27,6 @@ namespace RemoveDuplicates
             }
             return outputList;
         }
+
     }
 }
