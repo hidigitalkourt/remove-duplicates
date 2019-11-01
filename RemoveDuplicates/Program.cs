@@ -4,28 +4,31 @@ using System.Collections.Generic;
 
 namespace RemoveDuplicates
 {
-    public static class Answer
+    public static class Program
     {
         static void Main(string[] args)
         {
 
         }
-        public static List<int> Deduplicate(List<int> inputList)
+        public static class Answer<T>
         {
-            var outputList = new List<int>(){};
-            if( inputList.Count == 0)
+            public static List<T> Deduplicate(List<T> inputList)
             {
-                return inputList;
-            }
-
-            foreach(var l in inputList)
-            {
-                if( !outputList.Contains(l))
+                var outputList = new List<T>() { };
+                if (inputList.Count == 0)
                 {
-                    outputList.Add(l);
+                    return inputList;
                 }
+
+                foreach (var l in inputList)
+                {
+                    if (!outputList.Contains(l))
+                    {
+                        outputList.Add(l);
+                    }
+                }
+                return outputList;
             }
-            return outputList;
         }
 
     }
