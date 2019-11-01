@@ -89,6 +89,46 @@ namespace RemoveDuplicatesTests
             actual.Should().BeEquivalentTo(expected);
         }
 
+        [Fact]
+        public void ReturnEmptyIfEmptyListChars()
+        {
+            var inputValues = new List<char>(){};
+            var expected = new List<char>(){};
+            var actual = Answer<char>.Deduplicate(inputValues);
+           
+            actual.Should().BeEquivalentTo(expected);
+        }
+
+        [Fact]
+        public void ReturnListForDistinctChars()
+        {
+            var inputValues = new List<char>(){'w','t'};
+            var expected = new List<char>(){'w','t'};
+            var actual = Answer<char>.Deduplicate(inputValues);
+           
+            actual.Should().BeEquivalentTo(expected);
+        }
+
+        [Fact]
+        public void ReturnListForNonDistinctChars()
+        {
+            var inputValues = new List<char>(){'w','w','t','t','r','r'};
+            var expected = new List<char>(){'w','t','r'};
+            var actual = Answer<char>.Deduplicate(inputValues);
+           
+            actual.Should().BeEquivalentTo(expected);
+        }
+
+        [Fact]
+        public void ReturnListForNonDistinctCharsNonOrdered()
+        {
+            var inputValues = new List<char>(){'w','t','r','w','t','r'};
+            var expected = new List<char>(){'w','t','r'};
+            var actual = Answer<char>.Deduplicate(inputValues);
+           
+            actual.Should().BeEquivalentTo(expected);
+        }
+
         
     }
 }
